@@ -4,6 +4,7 @@ import axios from 'axios';
 import Form from '../Form/Form.jsx';
 import Search from '../Search/Search.jsx';
 import Table from '../Table/Table.jsx';
+import { Padding } from '@mui/icons-material';
 
 function Home() {
 
@@ -46,7 +47,7 @@ function Home() {
             <Form
                 fetchWinners={fetchWinners}
             />
-            <hr />
+            <hr size='2' color='black' />
             <Search
                 searchInput={searchInput}
                 handleSearchInputChange={handleSearchInputChange}
