@@ -33,7 +33,7 @@ function Table({ filteredWinners, fetchWinners }) {
             <table className="data-table">
                 <thead>
                     <tr>
-                        <th>Username</th>
+                        <th>Instagram</th>
                         <th>Date Won</th>
                         <th>Delete</th>
                     </tr>
@@ -41,9 +41,9 @@ function Table({ filteredWinners, fetchWinners }) {
                 <tbody>
                     {filteredWinners.map((winner) => (
                         <tr key={winner.id}>
-                            <td>{winner.instagram}</td>
-                            <td>{formatDate(winner.date)}</td>
-                            <td>
+                            <td className='table-cell' title={winner.instagram}>{winner.instagram}</td>
+                            <td className='table-cell'>{formatDate(winner.date)}</td>
+                            <td className='table-cell'>
                                 <DeleteForeverIcon 
                                     sx={{ cursor: "pointer" }}
                                     fontSize="large" 
@@ -53,7 +53,6 @@ function Table({ filteredWinners, fetchWinners }) {
                     ))}
                 </tbody>
             </table>
-
         </div>
     );
 }

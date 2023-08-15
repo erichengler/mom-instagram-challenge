@@ -1,12 +1,9 @@
 .App-header {
-    top: 0;
-    background-color: #583f5e;
+    background-color: #663b71;
     min-height: 150px;
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
-    resize: none;
 }

@@ -40,7 +40,7 @@ function Form ({ fetchWinners }) {
 
     return (
         <div className="Winner-form">
-            <h2 className='head'><u>Create New Winner</u></h2>
+            <h2 className='header'><u>Create New Winner</u></h2>
             <form>
                 <label>Instagram Handle:</label><br />
                 <input 
