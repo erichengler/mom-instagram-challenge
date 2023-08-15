@@ -1,0 +1,16 @@
+.data-table {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    font-size: larger;
+}
+
+table, th, td {
+    border: 1px solid;
+}
+
+th, td {
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
