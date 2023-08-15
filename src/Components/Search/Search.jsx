@@ -4,7 +4,11 @@ function Search ({ searchInput, handleSearchInputChange }) {
 
     return (
         <div className="Winner-search">
-            <h2 style={{marginBottom: "15px"}}><u>Previous Winners</u></h2>
+            <h2 
+                className="head"
+                style={{marginBottom: "15px"}}>
+                    <u>Previous Winners</u>
+            </h2>
             <input 
 
                 type="text"

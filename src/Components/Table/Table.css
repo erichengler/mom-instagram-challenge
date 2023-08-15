@@ -1,17 +1,15 @@
 .data-table {
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     font-size: larger;
-}
-
-table, th, td {
     border: 1px solid;
+    min-width: 500px;
 }
 
 th, td {
     padding: 10px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
     text-align: center;
 }

@@ -4,7 +4,7 @@ function Header () {
 
     return (
         <header className="App-header">
-            Instagram Challenge Winners
+            <h2>Instagram Challenge Winners</h2>
         </header>
     )
 }
