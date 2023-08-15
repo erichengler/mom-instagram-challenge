@@ -1,3 +1,12 @@
 .Winner-form {
-    margin: 40px;
+    margin-top: 20px;
+    margin-bottom: 40px;
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    padding-bottom: 1rem;
+  }
