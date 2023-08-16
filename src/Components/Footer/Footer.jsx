@@ -4,7 +4,7 @@ function Footer () {
 
     return (
         <footer className='footer'>
-            Created By Erich Engler
+            {/* Created By Erich Engler */}
         </footer>
     );
 }

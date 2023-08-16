@@ -30,31 +30,42 @@ function Table({ filteredWinners, fetchWinners }) {
 
     return (
         <div>
-            <table className="data-table">
-                <thead>
-                    <tr>
-                        <th>Instagram</th>
-                        <th>Date Won</th>
-                        <th>Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {filteredWinners.map((winner) => (
-                        <tr key={winner.id}>
-                            <td className='table-cell' title={winner.instagram}>{winner.instagram}
-                            <br />Name
-                            </td>
-                            <td className='table-cell'>{formatDate(winner.date)}</td>
-                            <td className='table-cell'>
-                                <DeleteForeverIcon 
-                                    sx={{ cursor: "pointer" }}
-                                    fontSize="large" 
-                                    onClick={() => removeWinner(winner.id)} />
-                            </td>
+            {filteredWinners.length === 0 ? <h3>No Winners Yet!</h3> :
+                <table className="data-table">
+                    <thead>
+                        <tr>
+                            <th>Name / Handle</th>
+                            <th>Date Won</th>
+                            <th>Delete</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {filteredWinners.map((winner) => (
+                            <tr key={winner.id} className='rows'>
+                                {winner.name ? (
+                                    <td className='table-cell'>
+                                        {winner.name}
+                                        <br />
+                                        {winner.instagram}
+                                    </td>
+                                ) : (
+                                    <td className='table-cell'>
+                                        {winner.instagram}
+                                    </td>
+                                )}
+
+                                <td>{formatDate(winner.date)}</td>
+                                <td>
+                                    <DeleteForeverIcon
+                                        sx={{ cursor: "pointer" }}
+                                        fontSize="large"
+                                        onClick={() => removeWinner(winner.id)} />
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            }
         </div>
     );
 }

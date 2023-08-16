@@ -23,11 +23,12 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
 
     const handle = req.body.handle;
+    const name = req.body.name;
     const date = req.body.date;
-    const query = `INSERT INTO winners (instagram, date) VALUES ($1, $2);`;
+    const query = `INSERT INTO winners (instagram, name, date) VALUES ($1, $2, $3);`;
 
     pool
-        .query(query, [handle, date])
+        .query(query, [handle, name, date])
         .then(() => {
             res.sendStatus(201);
         })

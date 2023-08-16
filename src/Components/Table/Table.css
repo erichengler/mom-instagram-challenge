@@ -3,11 +3,12 @@ table {
     margin-right: auto;
     margin-bottom: 100px;
     font-size: larger;
+    border-collapse: collapse;
 }
 
 .table-cell {
-    width: 220px;
-    max-width: 220px;
+    width: 350px;
+    max-width: 350px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -15,11 +16,19 @@ table {
     padding-right: 25px;
 }
 
-th, td {
+td {
     text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 10px 30px 10px 30px;
     border: 1px solid black;
 }
+
+.rows:nth-child(even) {
+    background-color: #d5b5da;
+}
+
+.rows:hover {
+    background-color: #b498b8; 
+}
+
+
+

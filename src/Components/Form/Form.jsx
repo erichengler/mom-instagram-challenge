@@ -2,10 +2,11 @@ import { useState } from 'react';
 import axios from 'axios';
 import './Form.css'
 
-function Form ({ fetchWinners }) {
+function Form({ fetchWinners }) {
 
     // Storing instagram handle and date won from user form
     const [instagramHandle, setInstagramHandle] = useState('');
+    const [name, setName] = useState('');
     const [dateWon, setDateWon] = useState('');
 
     const createNewWinner = (event) => {
@@ -20,6 +21,7 @@ function Form ({ fetchWinners }) {
         // Data to be sent to the server
         const formData = {
             handle: instagramHandle,
+            name: name,
             date: dateWon,
         }
 
@@ -32,7 +34,6 @@ function Form ({ fetchWinners }) {
                 setDateWon('');
                 // Fetch winners after successful submission
                 fetchWinners();
-                alert(`Added ${instagramHandle} to the winners list. Date won: ${dateWon}`)
             })
             .catch((error) => {
                 console.log('Error creating new winner:', error);
@@ -44,19 +45,28 @@ function Form ({ fetchWinners }) {
             <h2 className='header'><u>Create New Winner</u></h2>
             <form>
                 <label>Instagram Handle:</label><br />
-                <input 
-                    type="text" 
-                    id="handle" 
+                <input
+                    type="text"
+                    id="handle"
                     name="handle"
                     value={instagramHandle}
                     onChange={(event) => setInstagramHandle(event.target.value)}
                 />
 
+                <label>Name: (optional)</label><br />
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={name}
+                    onChange={(event) => setName(event.target.value)}
+                />
+
                 <label>Date Won:</label><br />
-                <input 
-                    type="date" 
-                    id="date" 
-                    name="date" 
+                <input
+                    type="date"
+                    id="date"
+                    name="date"
                     value={dateWon}
                     onChange={(event) => setDateWon(event.target.value)}
                 /><br />

@@ -21,7 +21,7 @@ body {
 
 .bg {
     position: absolute;
-    left: 50%; /* Start from the center */
+    left: 50%;
     transform: translateX(-50%); /* Center the image */
     top: 0;
     width: auto;
