@@ -32,6 +32,7 @@ function Form ({ fetchWinners }) {
                 setDateWon('');
                 // Fetch winners after successful submission
                 fetchWinners();
+                alert(`Added ${instagramHandle} to the winners list. Date won: ${dateWon}`)
             })
             .catch((error) => {
                 console.log('Error creating new winner:', error);

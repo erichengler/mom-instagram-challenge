@@ -26,12 +26,12 @@ body {
     top: 0;
     width: auto;
     height: 100%;
-    opacity: 0.5;
+    opacity: 0.7;
 }
 
 .head {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     border-bottom: 2px solid black;
 }
 
@@ -39,28 +39,25 @@ body {
     position: relative;
     background-color: rgb(218, 193, 224);
     text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8); 
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.9); 
     margin: 0 auto;
     max-width: 800px;
-}
-
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-        monospace;
+    min-height: 100vh;
 }
 
 input,
 button,
 textarea {
     font-family: 'Nunito', sans-serif;
-    font-size: 22px;
+    font-size: 20px;
     padding: 0.25rem;
-    border-radius: 0.6rem;
+    border-radius: 0.5rem;
 }
 
 label,
 button {
-    margin-top: 1rem;
+    margin-top: 1.8rem;
+    margin-bottom: -10px;
 }
 
 button {

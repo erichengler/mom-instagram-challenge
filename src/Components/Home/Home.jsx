@@ -4,15 +4,28 @@ import axios from 'axios';
 import Form from '../Form/Form.jsx';
 import Search from '../Search/Search.jsx';
 import Table from '../Table/Table.jsx';
-import { Padding } from '@mui/icons-material';
+
+import './Home.css'
 
 function Home() {
 
+    // Storing password
+    const [password, setPassword] = useState('');
+    const [authenticated, setAuthenticated] = useState(false);
     // Storing user search input
     const [searchInput, setSearchInput] = useState('');
-
     // Storing winners
     const [winners, setWinners] = useState([]);
+
+    const handlePasswordChange = (event) => {
+        setPassword(event.target.value);
+    }
+
+    const checkPassword = () => {
+        if (password === process.env.REACT_APP_PASSWORD) {
+            setAuthenticated(true);
+        }
+    }
 
     // GET request to fetch winners
     const fetchWinners = () => {
@@ -42,22 +55,34 @@ function Home() {
         winner.instagram.toLowerCase().includes(searchInput.toLowerCase())
     );
 
-    return (
-        <div>
-            <Form
-                fetchWinners={fetchWinners}
-            />
-            <hr size='2' color='black' />
-            <Search
-                searchInput={searchInput}
-                handleSearchInputChange={handleSearchInputChange}
-            />
-            <Table
-                filteredWinners={filteredWinners}
-                fetchWinners={fetchWinners}
-            />
-        </div>
-    );
+    if (!authenticated) {
+        return (
+            <div>
+                <h2 className='auth'>Hi Mom! Please enter your password.</h2>
+                <br /><br />
+                <input type='password' value={password} onChange={handlePasswordChange} />
+                <br />
+                <button className='login-button' onClick={checkPassword}>Submit</button>
+            </div>
+        )
+    } else {
+        return (
+            <div>
+                <Form
+                    fetchWinners={fetchWinners}
+                />
+                <hr size='2' color='black' />
+                <Search
+                    searchInput={searchInput}
+                    handleSearchInputChange={handleSearchInputChange}
+                />
+                <Table
+                    filteredWinners={filteredWinners}
+                    fetchWinners={fetchWinners}
+                />
+            </div>
+        );
+    }
 }
 
 export default Home;

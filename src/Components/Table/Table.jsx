@@ -41,7 +41,9 @@ function Table({ filteredWinners, fetchWinners }) {
                 <tbody>
                     {filteredWinners.map((winner) => (
                         <tr key={winner.id}>
-                            <td className='table-cell' title={winner.instagram}>{winner.instagram}</td>
+                            <td className='table-cell' title={winner.instagram}>{winner.instagram}
+                            <br />Name
+                            </td>
                             <td className='table-cell'>{formatDate(winner.date)}</td>
                             <td className='table-cell'>
                                 <DeleteForeverIcon 
