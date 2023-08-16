@@ -16,18 +16,28 @@ body {
 .wrap {
     overflow: hidden;
     position: relative;
-    background-repeat: repeat-y;
 }
 
-.bg {
+.wrap::before {
+    content: "";
+    background-image: url('https://images.unsplash.com/photo-1558350283-8269d86681f2');
+    position: absolute;
+    opacity: 0.7;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+
+/* .bg {
     position: absolute;
     left: 50%;
-    transform: translateX(-50%); /* Center the image */
+    transform: translateX(-50%);
     top: 0;
     width: auto;
     height: 100%;
     opacity: 0.7;
-}
+} */
 
 .head {
     position: relative;

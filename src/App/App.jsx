@@ -8,11 +8,6 @@ function App() {
 
     return (
         <div className="wrap">
-            <img
-                className="bg"
-                src="https://images.unsplash.com/photo-1558350283-8269d86681f2"
-                alt=""
-            />
             <div className='head'>
                 <Header />
             </div>
