@@ -52,7 +52,6 @@ function Home() {
     // Filter results based on user search input
     const filteredWinners = winners.filter((winner) =>
         winner.instagram.toLowerCase().includes(searchInput.toLowerCase())
-        | winner.name.toLowerCase().includes(searchInput.toLowerCase())
     );
 
     if (!authenticated) {

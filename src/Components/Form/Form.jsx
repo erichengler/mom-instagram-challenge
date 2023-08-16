@@ -31,6 +31,7 @@ function Form({ fetchWinners }) {
             .then((response) => {
                 // Reset form after successful submission
                 setInstagramHandle('');
+                setName('');
                 setDateWon('');
                 // Fetch winners after successful submission
                 fetchWinners();

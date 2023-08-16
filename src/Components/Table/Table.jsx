@@ -30,11 +30,11 @@ function Table({ filteredWinners, fetchWinners }) {
 
     return (
         <div>
-            {filteredWinners.length === 0 ? <h3>No Winners Yet!</h3> :
+            {filteredWinners.length === 0 ? <h3>No Winners!</h3> :
                 <table className="data-table">
                     <thead>
                         <tr>
-                            <th>Name / Handle</th>
+                            <th>Name / Instagram</th>
                             <th>Date Won</th>
                             <th>Delete</th>
                         </tr>
